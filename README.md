@@ -28,4 +28,4 @@ Early Feature Checklist
         - [ ] play
     - [ ] save game support
     - [ ] load game support
-- [] CI + tests
+- [ ] CI + tests
