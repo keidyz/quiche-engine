@@ -9,8 +9,8 @@ Early Feature Checklist
 - [o] basic setup
     - [x] typescript integration
     - [x] react integration
-    - [ ] linting
-    - [ ] prettier
+    - [x] linting
+    - [x] prettier
 - [o] basic game engine functionality
     - [o] main menu
     - [o] dependency on user-configurable game creation configurations
