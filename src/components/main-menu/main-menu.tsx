@@ -1,6 +1,6 @@
-
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
+
 import background from '#game-development-files/main-menu/bg.png';
 
 const Background = styled.img`
@@ -8,7 +8,5 @@ const Background = styled.img`
 `;
 
 export const MainMenu = () => {
-    return (
-        <Background src={background} />
-    );
+    return <Background src={background} />;
 };
