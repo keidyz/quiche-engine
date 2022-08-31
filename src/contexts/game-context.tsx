@@ -15,6 +15,7 @@ interface GameContextInterface {
     width: number;
     height: number;
     mode: Mode;
+    setMode: (mode: Mode) => void;
 }
 
 export const GameContext = createContext<GameContextInterface>({
@@ -22,6 +23,9 @@ export const GameContext = createContext<GameContextInterface>({
     width: width,
     height: height,
     mode: Mode.MAINMENU,
+    setMode: () => {
+        return;
+    },
 });
 
 export const GameProvider: React.FC<{ children: JSX.Element }> = ({
@@ -35,6 +39,7 @@ export const GameProvider: React.FC<{ children: JSX.Element }> = ({
                 width,
                 height,
                 mode,
+                setMode,
             }}
         >
             {children}

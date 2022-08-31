@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 
-import { Background } from './components';
+import { Background, StateHandler } from './components';
 import { GameProvider } from './contexts';
 
 const rootElement = document.getElementById('root');
@@ -15,7 +15,9 @@ const root = createRoot(rootElement);
 root.render(
     <React.StrictMode>
         <GameProvider>
-            <Background />
+            <Background>
+                <StateHandler />
+            </Background>
         </GameProvider>
     </React.StrictMode>,
 );
