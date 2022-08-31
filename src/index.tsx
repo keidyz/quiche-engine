@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 
-import { MainMenu } from './components';
+import { Background } from './components';
 
 const rootElement = document.getElementById('root');
 
@@ -13,6 +13,6 @@ const root = createRoot(rootElement);
 
 root.render(
     <React.StrictMode>
-        <MainMenu />
+        <Background />
     </React.StrictMode>,
 );
