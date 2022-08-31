@@ -1,10 +1,10 @@
 import React, { createContext, useState } from 'react';
 
-import configuration from '#game-development-files/configuration.json';
-import background from '#game-development-files/main-menu/bg.png';
+import configuration, {
+    MainMenuConfiguration,
+} from '../../game-development-files/configuration';
 
-const { height, width } = configuration;
-
+const { height, width, mainMenu } = configuration;
 export enum Mode {
     MAINMENU = 'main-menu',
     PLAY = 'play',
@@ -12,18 +12,24 @@ export enum Mode {
 
 interface GameContextInterface {
     backgroundPath: string;
+    mainMenu: MainMenuConfiguration;
     width: number;
     height: number;
     mode: Mode;
-    setMode: (mode: Mode) => void;
+    setMode: (arg: Mode) => void;
+    setBackgroundPath: (arg: string) => void;
 }
 
 export const GameContext = createContext<GameContextInterface>({
-    backgroundPath: background,
+    backgroundPath: '',
+    mainMenu,
     width: width,
     height: height,
     mode: Mode.MAINMENU,
     setMode: () => {
+        return;
+    },
+    setBackgroundPath: () => {
         return;
     },
 });
@@ -32,14 +38,20 @@ export const GameProvider: React.FC<{ children: JSX.Element }> = ({
     children,
 }) => {
     const [mode, setMode] = useState<Mode>(Mode.MAINMENU);
+    const [backgroundPath, setBackgroundPath] = useState<string>(
+        mainMenu.backgroundPath,
+    );
+
     return (
         <GameContext.Provider
             value={{
-                backgroundPath: background,
+                backgroundPath,
+                mainMenu,
                 width,
                 height,
                 mode,
                 setMode,
+                setBackgroundPath,
             }}
         >
             {children}
