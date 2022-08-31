@@ -87,4 +87,7 @@ module.exports = {
         // react
         JSX: true,
     },
+    env: {
+        node: true,
+    },
 };
