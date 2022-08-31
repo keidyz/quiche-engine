@@ -6,15 +6,14 @@ Early Feature Checklist
 [o] - Partially worked on
 [x] - Done
 ```
-- [o] basic setup
+- [x] basic setup
     - [x] typescript integration
     - [x] react integration
     - [x] linting
     - [x] prettier
 - [o] basic game engine functionality
-    - [o] main menu
-    - [o] dependency on user-configurable game creation configurations
-    - [o] main menu
+    - [x] main menu
+    - [x] dependency on user-configurable game creation configurations
     - [ ] characters integration
     - [ ] dialogue integration
         - [ ] linear dialogue
@@ -23,9 +22,9 @@ Early Feature Checklist
         - [ ] click screen to progress dialogue
         - [ ] choice selection
         - [ ] text parsing
-    - [ ] basic game states overview
-        - [ ] main menu
-        - [ ] play
+    - [x] basic game states control
+        - [x] main menu
+        - [x] play
     - [ ] save game support
     - [ ] load game support
 - [ ] CI + tests
