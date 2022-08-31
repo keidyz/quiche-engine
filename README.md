@@ -15,8 +15,8 @@ Early Feature Checklist
     - [x] main menu
     - [x] dependency on user-configurable game creation configurations
     - [ ] characters integration
-    - [ ] dialogue integration
-        - [ ] linear dialogue
+    - [o] dialogue integration
+        - [o] linear dialogue
         - [ ] forked dialogue support
     - [ ] basic game control
         - [ ] click screen to progress dialogue
