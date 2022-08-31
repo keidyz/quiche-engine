@@ -1,0 +1,18 @@
+[
+    {
+        "type": "background",
+        "value": "bgA"
+    },
+    {
+        "type": "dialogue",
+        "value": "dialogue a"
+    },
+    {
+        "type": "dialogue",
+        "value": "dialogue b"
+    },
+    {
+        "type": "dialogue",
+        "value": "dialogue c"
+    }
+]
