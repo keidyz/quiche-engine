@@ -1,19 +1,32 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 
-import configuration from '#game-development-files/configuration.json';
-import background from '#game-development-files/main-menu/bg.png';
+import { GameContext } from '../../contexts';
 
-const { height, width } = configuration;
-const heightPercent = (height / width) * 100;
-
-const BackgroundWrapper = styled.div`
-    background-image: url('${background}');
+const BackgroundWrapper = styled.div<{
+    heightPercent: number;
+    background: string;
+}>`
+    background-image: url('${(props) => props.background}');
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    padding-bottom: ${heightPercent}%;
+    padding-bottom: ${(props) => props.heightPercent}%;
 `;
 
-export const Background: React.FC<any> = (props) => {
-    return <BackgroundWrapper>{props.children}</BackgroundWrapper>;
+interface BackgroundProps {
+    children?: JSX.Element;
+}
+
+export const Background: React.FC<BackgroundProps> = (props) => {
+    const { backgroundPath, width, height } = useContext(GameContext);
+    const { children } = props;
+    const heightPercent = (height / width) * 100;
+    return (
+        <BackgroundWrapper
+            background={backgroundPath}
+            heightPercent={heightPercent}
+        >
+            {children}
+        </BackgroundWrapper>
+    );
 };
