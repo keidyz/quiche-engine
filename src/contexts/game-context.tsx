@@ -1,10 +1,11 @@
 import React, { createContext, useState } from 'react';
 
 import configuration, {
+    DialogueBoxConfiguration,
     MainMenuConfiguration,
 } from '../../game-development-files/configuration';
 
-const { height, width, mainMenu } = configuration;
+const { height, width, mainMenu, dialogueBox } = configuration;
 export enum Mode {
     MAINMENU = 'main-menu',
     PLAY = 'play',
@@ -12,6 +13,7 @@ export enum Mode {
 
 interface GameContextInterface {
     backgroundPath: string;
+    dialogueBox: DialogueBoxConfiguration;
     mainMenu: MainMenuConfiguration;
     width: number;
     height: number;
@@ -22,6 +24,7 @@ interface GameContextInterface {
 
 export const GameContext = createContext<GameContextInterface>({
     backgroundPath: '',
+    dialogueBox,
     mainMenu,
     width: width,
     height: height,
@@ -46,6 +49,7 @@ export const GameProvider: React.FC<{ children: JSX.Element }> = ({
         <GameContext.Provider
             value={{
                 backgroundPath,
+                dialogueBox,
                 mainMenu,
                 width,
                 height,

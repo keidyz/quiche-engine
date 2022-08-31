@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useContext } from 'react';
 
 import { GameContext, Mode } from '../contexts';
-import { MainMenu } from './';
+import { MainMenu, PlayHandler } from './';
 
 export const StateHandler: FunctionComponent<{}> = () => {
     const { mode } = useContext(GameContext);
@@ -9,5 +9,5 @@ export const StateHandler: FunctionComponent<{}> = () => {
         return <MainMenu />;
     }
 
-    return <>sample play mode</>;
+    return <PlayHandler />;
 };
